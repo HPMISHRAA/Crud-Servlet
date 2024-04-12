@@ -21,6 +21,7 @@ public class MovieDao {
 	}
 
 	public List<Movie> fetchMovies() {
-		return manager.createNativeQuery("select * from Movie", Movie.class).getResultList();   //this method is used to write sql query
+//		return manager.createNativeQuery("select * from Movie", Movie.class).getResultList();   //this method is used to write sql query
+		return manager.createQuery("select x from Movie x").getResultList();
 	}
 }
