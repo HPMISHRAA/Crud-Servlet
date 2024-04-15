@@ -45,6 +45,8 @@ public class InsertMovie extends HttpServlet {
 
 			MovieDao dao = new MovieDao();
 			dao.savemovie(movie);
+			resp.getWriter().print("<h1 align='center' style='color:green'>Movie Added Successfully</h1>");
+			req.getRequestDispatcher("home.html").include(req, resp);
 
 		} catch (NumberFormatException e) {
 			resp.getWriter().print("<h1 align='center'>Enter proper Rating </h1>");

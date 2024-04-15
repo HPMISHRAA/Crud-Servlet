@@ -1,23 +1,100 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fetch Movies By Language</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    select, button {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-button:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+</style>
 </head>
 <body>
-	<div align="center">
-		<form action="fetch-lang" method="post">
-			Enter Movie Language <select name="language" required="required">
-				<option disabled="disabled" selected="selected" >Select
-					a Language</option>
-				<option value="English">English</option>
-				<option value="Hindi">Hindi</option>
-				<option value="Bhojpuri">Bhojpuri</option>
 
-			</select>
-			<button>Fetch</button>
+<div class="container">
+    <h1>Fetch Movies By Language</h1>
+    <form action="fetch-lang" method="post">
+        <label for="language">Select Movie Language:</label>
+        <select id="language" name="language" required>
+            <option disabled selected>Select a Language</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Bhojpuri">Bhojpuri</option>
+        </select>
 
-		</form>
-	</div>
+        <button type="submit">Fetch</button>
+    </form>
+
+    <a href="javascript:history.back()" class="back-button">Back</a>
+</div>
+
 </body>
 </html>

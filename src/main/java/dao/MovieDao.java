@@ -38,10 +38,18 @@ public class MovieDao {
 	}
 
 	public List<Movie> fetchMovieByLang(String name) {
-		return manager.createQuery("select x from Movie x where name=?8").setParameter(8, name).getResultList();
+		return manager.createQuery("select x from Movie x where language=?8").setParameter(8, name).getResultList();
 	}
 
 	public List<Movie> fetchMovieByGenre(String name) {
-		return manager.createQuery("select x from Movie x where name=?9").setParameter(9, name).getResultList();
+		return manager.createQuery("select x from Movie x where genre=?9").setParameter(9, name).getResultList();
+	}
+
+	public void deleteMovie(int id) {
+		transaction.begin();
+
+		manager.remove(manager.find(Movie.class, id));
+		transaction.commit();
+
 	}
 }

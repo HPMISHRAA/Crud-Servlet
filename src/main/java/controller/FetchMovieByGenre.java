@@ -21,7 +21,7 @@ public class FetchMovieByGenre extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String genre = req.getParameter("name");
+		String genre = req.getParameter("genre");
 		MovieDao dao = new MovieDao();
 		List<Movie> list = dao.fetchMovieByGenre(genre);
 		if (list.isEmpty()) {

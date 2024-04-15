@@ -1,35 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Movies</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h1 {
+        color: #333;
+    }
+
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+    input[type="text"], select, input[type="file"], button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    select {
+        cursor: pointer;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .back-button {
+        display: inline-block;
+        margin-top: 20px;
+        text-decoration: none;
+        color: #333;
+        border: 1px solid #333;
+        padding: 8px 16px;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    .back-button:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+</style>
 </head>
 <body>
-	<div align="center">
-		<h1>Add Movies</h1>
-		<form action="insert-movie" method="post"
-			enctype="multipart/form-data">
-			Enter Movie Name <input type="text" name="name"> <br> <br>
-			Enter Movie Language <select name="language" required="required">
-				<option disabled="disabled" selected="selected" value=>Select
-					a Language</option>
-				<option value="English">English</option>
-				<option value="Hindi">Hindi</option>
-				<option value="Bhojpuri">Bhojpuri</option>
-			</select> <br> <br> Rating <input type="text" name="rating">
-			<br> <br> Image <input type="file" name="picture">
-			<br> <br> Genre <select name="genre" required="required">
-				<option disabled="disabled" selected="selected" value=>Select
-					a Genre</option>
-				<option>Horror</option>
-				<option>Comedy</option>
-				<option>Action</option>
-				<option>Action</option>
-				<option>Thriller</option>
-			</select> <br> <br>
-			<button>Add</button>
 
-		</form>
-	</div>
+<div class="container">
+    <h1>Add Movies</h1>
+    <form action="insert-movie" method="post" enctype="multipart/form-data">
+        <label for="name">Enter Movie Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="language">Enter Movie Language</label>
+        <select id="language" name="language" required>
+            <option disabled selected value="">Select a Language</option>
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Bhojpuri">Bhojpuri</option>
+        </select>
+
+        <label for="rating">Rating</label>
+        <input type="text" id="rating" name="rating">
+
+        <label for="picture">Image</label>
+        <input type="file" id="picture" name="picture">
+
+        <label for="genre">Genre</label>
+        <select id="genre" name="genre" required>
+            <option disabled selected value="">Select a Genre</option>
+            <option>Horror</option>
+            <option>Comedy</option>
+            <option>Action</option>
+            <option>Thriller</option>
+        </select>
+
+        <button type="submit">Add</button>
+    </form>
+
+    <a href="javascript:history.back()" class="back-button">Back</a>
+</div>
+
 </body>
 </html>
