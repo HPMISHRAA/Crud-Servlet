@@ -35,7 +35,7 @@
 			<td><%=movie.getLanguage()%></td>
 			<td><%=movie.getGenre()%></td>
 			<td><%=movie.getRating()%></td>
-			<td><button>Edit</button></td>
+			<td><a href="edit-movie?id=<%=movie.getId()%>"><button>Edit</button></a></td>
 			<td><a href="delete-movie?id=<%=movie.getId()%>">
 					<button>Delete</button>
 			</a></td>
@@ -45,7 +45,9 @@
 		}
 		%>
 	</table>
-	<br> <div align='center'>
-	<a href="home.html"><button>Back</button></a></div>
+	<br>
+	<div align='center'>
+		<a href="home.html"><button>Back</button></a>
+	</div>
 </body>
 </html>

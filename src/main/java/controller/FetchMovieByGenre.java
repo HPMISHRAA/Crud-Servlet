@@ -25,7 +25,7 @@ public class FetchMovieByGenre extends HttpServlet {
 		MovieDao dao = new MovieDao();
 		List<Movie> list = dao.fetchMovieByGenre(genre);
 		if (list.isEmpty()) {
-			resp.getWriter().print("<h1 style='colour:red' align:'center'>No Movies Found</h1>");
+			resp.getWriter().print("<h1 style='color:red' align:'center'>No Movies Found</h1>");
 			req.getRequestDispatcher("home.html").include(req, resp);
 		} else {
 			req.setAttribute("list", list);
