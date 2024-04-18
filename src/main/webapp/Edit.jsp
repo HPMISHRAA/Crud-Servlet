@@ -11,20 +11,17 @@
 <body>
 	<h1>Edit Movies</h1>
 	<%
-	List<Movie> list = (List<Movie>) request.getAttribute("list");
-	for (Movie movie : list) {
+	Movie movie=(Movie)request.getAttribute("movie");
 	%>
 	<form action="edit-movie" method="post">
 		Id: <input type="number" name="id" value="<%=movie.getId()%>"><br>
 		<br> Name: <input type="text" name="name"
-			value="<%=movie.getName()%>"><br> <br> Genre: <input
-			type="text" name="lang" value="<%=movie.getLanguage()%>"> <br>
-		<br>Language: <input type="text" name="genre"
-			value="<%=movie.getGenre()%>"><br> <br> <input
-			type="submit" value="Submit">
+			value="<%=movie.getName()%>"><br> <br> Rating: <input
+			type="text" name="rating" value="<%=movie.getRating()%>"><br>
+		<br> Genre: <input type="text" name="lang"
+			value="<%=movie.getLanguage()%>"> <br> <br>Language:
+		<input type="text" name="genre" value="<%=movie.getGenre()%>"><br>
+		<br> <input type="submit" value="Submit">
 	</form>
-	<%
-	}
-	%>
 </body>
 </html>

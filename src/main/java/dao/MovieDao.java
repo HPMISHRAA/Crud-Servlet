@@ -53,12 +53,14 @@ public class MovieDao {
 
 	}
 
-	public void editMovie(Movie movie, int id) {
+	public Movie findMovie(int no) {
+		return manager.find(Movie.class, no);
+	}
+
+	public void updateMovie(Movie movie) {
 		transaction.begin();
-		manager.merge(manager.find(Movie.class, id));
-//		manager.merge(manager.find(Movie.class, movie));
+		manager.merge(movie);
 		transaction.commit();
 
 	}
 }
-//}
